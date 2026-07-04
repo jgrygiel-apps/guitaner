@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02297E453DFAEE345A4DE7E6 /* ChordFingering.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11315B6E1A438AA03348F8 /* ChordFingering.swift */; };
+		048A2ADDA4F22174E9598916 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B68299618FFFB740D28B80 /* Theme.swift */; };
+		05B408A7E395BA04BB2A1D1B /* SignalPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A07AA65E7889540260F90F /* SignalPreprocessor.swift */; };
+		0B249F1EB0F5B788CE401D8A /* MetronomeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBDD68A28BB11DE43B6773 /* MetronomeEngine.swift */; };
+		0C61F7CEEC715C981C9F7384 /* AudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B19924DAAAE54F1811A0CE5 /* AudioSessionManager.swift */; };
+		1F4416FFB9E3E5C83030FAB1 /* NoteDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63872B2AEB087B36B685288A /* NoteDisplayView.swift */; };
+		251D5427494DAA56F2F98BE1 /* NoteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A480B813EF4DFFBD8C28 /* NoteDatabase.swift */; };
+		28F0C781AC3731DA2CA31570 /* ChromagramAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802A9B434A411ED1E33162B /* ChromagramAnalyzer.swift */; };
+		30D419CC96BF41C991C1BFA2 /* ChordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D90CB1D36811FDCB9E1BE /* ChordViewModel.swift */; };
+		3105F08A6BD15436D8205C60 /* GuitanerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EC25AA41862A9E8EB5DC81 /* GuitanerApp.swift */; };
+		3AAAC6E105C56D3949917E85 /* PitchSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2833CF4484FC2B1D71621D /* PitchSmoother.swift */; };
+		4096EF055480873CA42EF9DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC930B81624FB3E982A3B0 /* Constants.swift */; };
+		4A8CA4CF810496A542C38973 /* FrequencyDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DB638C5E72E37E2783F8F /* FrequencyDisplayView.swift */; };
+		4CF69B3D27152A6B0B034152 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37995A31E2BA9883D4DF307 /* AudioEngine.swift */; };
+		4F5649D72AC1D522B4EAD3A1 /* ChordPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734EE81B323043CEEBD1888 /* ChordPlayer.swift */; };
+		4FCACC3EC2378AA12971866C /* GuitanerIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B488C098FD21B44AC34F11F /* GuitanerIcon.swift */; };
+		51121B94597944186CC8BFCA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC5542C13AF67CE030A315 /* SplashScreen.swift */; };
+		53EC8ABFEB69922277BC54FC /* TuningEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2DC2F27D999DDF44C3CEC2 /* TuningEngine.swift */; };
+		6D2821C2B87DD6D1E8424093 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740FF5CDD779D58A4F7031D /* FeatureFlags.swift */; };
+		6FD6AB90CA28DB203343EB1C /* PitchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E52BE092A33A115B74DD2 /* PitchHistoryView.swift */; };
+		81AC38AA2CE7393F7AA7EF6F /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D539A017EEF9F34F445A /* Progression.swift */; };
+		8AD6AD0E336442F901C05658 /* ChordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB258206E69D01470135B7C /* ChordView.swift */; };
+		8DC03972A41A4BFAFEE1A02A /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2565E90CC0B987C7F724318 /* TonePlayer.swift */; };
+		8E76AC7412EB1E4AFA7BF372 /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA81666E6A5C55C98F70D36 /* PracticeView.swift */; };
+		957F7C7F8AC69DCA201CF80C /* YINPitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC0A6A69F7A4BD92DFEEDAB /* YINPitchDetector.swift */; };
+		96C32E2D15D5B92FE11CE2ED /* TunerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CB751AD456631C43EF3A38 /* TunerViewModel.swift */; };
+		9A4733710F01A11F68A72836 /* OnsetDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579B94C7DD22B81B69A719F /* OnsetDetector.swift */; };
+		AF65207F8A93519DDF59B6E5 /* ProgressionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841B8650A750CDCC6E00B85 /* ProgressionsView.swift */; };
+		B509BB047329929AAABC90C2 /* TuningPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79ADDDCA6AEAEA532F0664 /* TuningPickerView.swift */; };
+		BA4FB9C7A581DEF80352FEFC /* ChordLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64573A6EF36A78F35778BC97 /* ChordLibraryView.swift */; };
+		C5B355340F63DEE0B6328CDE /* TuningDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4B31AD90EDFE8D256F876 /* TuningDefinition.swift */; };
+		CA7625C4AC9806A7C713125A /* ChordDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B8CF3B4BADE7CF20EA25F /* ChordDatabase.swift */; };
+		CC5AEC8AC73DBFBF85049FC2 /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E96460689E2A41E5EE37C /* TunerView.swift */; };
+		DEBDAC82B64EDE380465F1C7 /* FretboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B62E8CCA0A2FB3E2C33D0DF /* FretboardView.swift */; };
+		E9DB8B3063C3F1E2C5481F73 /* PracticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7911304646CCD4CD97D749C /* PracticeViewModel.swift */; };
+		EFFEDFF568177D9F7FF62CBD /* StringIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9ED8A144F74AB96101E7F9 /* StringIndicatorView.swift */; };
+		F3BC7E5104563E4C6F10A387 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8446248B62F492007D48D3F /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07A07AA65E7889540260F90F /* SignalPreprocessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalPreprocessor.swift; sourceTree = "<group>"; };
+		09DC5542C13AF67CE030A315 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		0BF4B31AD90EDFE8D256F876 /* TuningDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningDefinition.swift; sourceTree = "<group>"; };
+		0CA81666E6A5C55C98F70D36 /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		10F81341C81B52D219ABA2DA /* Guitaner.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Guitaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CB751AD456631C43EF3A38 /* TunerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewModel.swift; sourceTree = "<group>"; };
+		27EC25AA41862A9E8EB5DC81 /* GuitanerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitanerApp.swift; sourceTree = "<group>"; };
+		2802A9B434A411ED1E33162B /* ChromagramAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromagramAnalyzer.swift; sourceTree = "<group>"; };
+		3B79ADDDCA6AEAEA532F0664 /* TuningPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningPickerView.swift; sourceTree = "<group>"; };
+		4CB258206E69D01470135B7C /* ChordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordView.swift; sourceTree = "<group>"; };
+		5272A480B813EF4DFFBD8C28 /* NoteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDatabase.swift; sourceTree = "<group>"; };
+		5AC0A6A69F7A4BD92DFEEDAB /* YINPitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YINPitchDetector.swift; sourceTree = "<group>"; };
+		5ECBDD68A28BB11DE43B6773 /* MetronomeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeEngine.swift; sourceTree = "<group>"; };
+		61AC930B81624FB3E982A3B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		63872B2AEB087B36B685288A /* NoteDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDisplayView.swift; sourceTree = "<group>"; };
+		64573A6EF36A78F35778BC97 /* ChordLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordLibraryView.swift; sourceTree = "<group>"; };
+		6579B94C7DD22B81B69A719F /* OnsetDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnsetDetector.swift; sourceTree = "<group>"; };
+		668B8CF3B4BADE7CF20EA25F /* ChordDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordDatabase.swift; sourceTree = "<group>"; };
+		6B19924DAAAE54F1811A0CE5 /* AudioSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionManager.swift; sourceTree = "<group>"; };
+		6B488C098FD21B44AC34F11F /* GuitanerIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitanerIcon.swift; sourceTree = "<group>"; };
+		6B9ED8A144F74AB96101E7F9 /* StringIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIndicatorView.swift; sourceTree = "<group>"; };
+		747D90CB1D36811FDCB9E1BE /* ChordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordViewModel.swift; sourceTree = "<group>"; };
+		95B68299618FFFB740D28B80 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9B62E8CCA0A2FB3E2C33D0DF /* FretboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretboardView.swift; sourceTree = "<group>"; };
+		A2565E90CC0B987C7F724318 /* TonePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonePlayer.swift; sourceTree = "<group>"; };
+		B51E96460689E2A41E5EE37C /* TunerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
+		B7911304646CCD4CD97D749C /* PracticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewModel.swift; sourceTree = "<group>"; };
+		BA11315B6E1A438AA03348F8 /* ChordFingering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordFingering.swift; sourceTree = "<group>"; };
+		BC2DC2F27D999DDF44C3CEC2 /* TuningEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningEngine.swift; sourceTree = "<group>"; };
+		BE2833CF4484FC2B1D71621D /* PitchSmoother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchSmoother.swift; sourceTree = "<group>"; };
+		C16E52BE092A33A115B74DD2 /* PitchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchHistoryView.swift; sourceTree = "<group>"; };
+		D7D1D539A017EEF9F34F445A /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
+		D841B8650A750CDCC6E00B85 /* ProgressionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionsView.swift; sourceTree = "<group>"; };
+		E09DB638C5E72E37E2783F8F /* FrequencyDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyDisplayView.swift; sourceTree = "<group>"; };
+		E37995A31E2BA9883D4DF307 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		E740FF5CDD779D58A4F7031D /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
+		F734EE81B323043CEEBD1888 /* ChordPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPlayer.swift; sourceTree = "<group>"; };
+		F8446248B62F492007D48D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1F65F7E849A51D304A2B1FF8 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				E37995A31E2BA9883D4DF307 /* AudioEngine.swift */,
+				6B19924DAAAE54F1811A0CE5 /* AudioSessionManager.swift */,
+				F734EE81B323043CEEBD1888 /* ChordPlayer.swift */,
+				5ECBDD68A28BB11DE43B6773 /* MetronomeEngine.swift */,
+				A2565E90CC0B987C7F724318 /* TonePlayer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		29E0B9F107EF9BDCA64D288D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				61AC930B81624FB3E982A3B0 /* Constants.swift */,
+				E740FF5CDD779D58A4F7031D /* FeatureFlags.swift */,
+				95B68299618FFFB740D28B80 /* Theme.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		36C6A92806A6D8214AC07C0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64573A6EF36A78F35778BC97 /* ChordLibraryView.swift */,
+				4CB258206E69D01470135B7C /* ChordView.swift */,
+				E09DB638C5E72E37E2783F8F /* FrequencyDisplayView.swift */,
+				9B62E8CCA0A2FB3E2C33D0DF /* FretboardView.swift */,
+				63872B2AEB087B36B685288A /* NoteDisplayView.swift */,
+				C16E52BE092A33A115B74DD2 /* PitchHistoryView.swift */,
+				0CA81666E6A5C55C98F70D36 /* PracticeView.swift */,
+				D841B8650A750CDCC6E00B85 /* ProgressionsView.swift */,
+				6B9ED8A144F74AB96101E7F9 /* StringIndicatorView.swift */,
+				B51E96460689E2A41E5EE37C /* TunerView.swift */,
+				3B79ADDDCA6AEAEA532F0664 /* TuningPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E071845102FEF81811B0C9A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				747D90CB1D36811FDCB9E1BE /* ChordViewModel.swift */,
+				B7911304646CCD4CD97D749C /* PracticeViewModel.swift */,
+				21CB751AD456631C43EF3A38 /* TunerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		59F5F76F7A69E0DE47CC14C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10F81341C81B52D219ABA2DA /* Guitaner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D9F0C222313A4D109AFA51F /* DSP */ = {
+			isa = PBXGroup;
+			children = (
+				2802A9B434A411ED1E33162B /* ChromagramAnalyzer.swift */,
+				6579B94C7DD22B81B69A719F /* OnsetDetector.swift */,
+				BE2833CF4484FC2B1D71621D /* PitchSmoother.swift */,
+				07A07AA65E7889540260F90F /* SignalPreprocessor.swift */,
+				5AC0A6A69F7A4BD92DFEEDAB /* YINPitchDetector.swift */,
+			);
+			path = DSP;
+			sourceTree = "<group>";
+		};
+		9A901A3372E51CE2FDE5A551 = {
+			isa = PBXGroup;
+			children = (
+				D172192C4673363C063839F6 /* Guitaner */,
+				59F5F76F7A69E0DE47CC14C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B83801E4EB434297511045B9 /* Tuning */ = {
+			isa = PBXGroup;
+			children = (
+				668B8CF3B4BADE7CF20EA25F /* ChordDatabase.swift */,
+				BA11315B6E1A438AA03348F8 /* ChordFingering.swift */,
+				5272A480B813EF4DFFBD8C28 /* NoteDatabase.swift */,
+				D7D1D539A017EEF9F34F445A /* Progression.swift */,
+				0BF4B31AD90EDFE8D256F876 /* TuningDefinition.swift */,
+				BC2DC2F27D999DDF44C3CEC2 /* TuningEngine.swift */,
+			);
+			path = Tuning;
+			sourceTree = "<group>";
+		};
+		D172192C4673363C063839F6 /* Guitaner */ = {
+			isa = PBXGroup;
+			children = (
+				F8446248B62F492007D48D3F /* Assets.xcassets */,
+				27EC25AA41862A9E8EB5DC81 /* GuitanerApp.swift */,
+				6B488C098FD21B44AC34F11F /* GuitanerIcon.swift */,
+				09DC5542C13AF67CE030A315 /* SplashScreen.swift */,
+				1F65F7E849A51D304A2B1FF8 /* Audio */,
+				8D9F0C222313A4D109AFA51F /* DSP */,
+				B83801E4EB434297511045B9 /* Tuning */,
+				29E0B9F107EF9BDCA64D288D /* Utilities */,
+				4E071845102FEF81811B0C9A /* ViewModel */,
+				36C6A92806A6D8214AC07C0A /* Views */,
+			);
+			path = Guitaner;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F8E1D4410E37EF2F35C0564 /* Guitaner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 142CECBB206803190F2EBED6 /* Build configuration list for PBXNativeTarget "Guitaner" */;
+			buildPhases = (
+				E04DEDA712ADA49C0ECB7715 /* Sources */,
+				E0EABBFDE0D8ECE7A5633C5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Guitaner;
+			packageProductDependencies = (
+			);
+			productName = Guitaner;
+			productReference = 10F81341C81B52D219ABA2DA /* Guitaner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6861F0D6600478D4738FD0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					8F8E1D4410E37EF2F35C0564 = {
+						DevelopmentTeam = 324R93TVL2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 136D881A97D6F9A89115FCE5 /* Build configuration list for PBXProject "Guitaner" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 9A901A3372E51CE2FDE5A551;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 54;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F8E1D4410E37EF2F35C0564 /* Guitaner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0EABBFDE0D8ECE7A5633C5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BC7E5104563E4C6F10A387 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E04DEDA712ADA49C0ECB7715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CF69B3D27152A6B0B034152 /* AudioEngine.swift in Sources */,
+				0C61F7CEEC715C981C9F7384 /* AudioSessionManager.swift in Sources */,
+				CA7625C4AC9806A7C713125A /* ChordDatabase.swift in Sources */,
+				02297E453DFAEE345A4DE7E6 /* ChordFingering.swift in Sources */,
+				BA4FB9C7A581DEF80352FEFC /* ChordLibraryView.swift in Sources */,
+				4F5649D72AC1D522B4EAD3A1 /* ChordPlayer.swift in Sources */,
+				8AD6AD0E336442F901C05658 /* ChordView.swift in Sources */,
+				30D419CC96BF41C991C1BFA2 /* ChordViewModel.swift in Sources */,
+				28F0C781AC3731DA2CA31570 /* ChromagramAnalyzer.swift in Sources */,
+				4096EF055480873CA42EF9DB /* Constants.swift in Sources */,
+				6D2821C2B87DD6D1E8424093 /* FeatureFlags.swift in Sources */,
+				4A8CA4CF810496A542C38973 /* FrequencyDisplayView.swift in Sources */,
+				DEBDAC82B64EDE380465F1C7 /* FretboardView.swift in Sources */,
+				3105F08A6BD15436D8205C60 /* GuitanerApp.swift in Sources */,
+				4FCACC3EC2378AA12971866C /* GuitanerIcon.swift in Sources */,
+				0B249F1EB0F5B788CE401D8A /* MetronomeEngine.swift in Sources */,
+				251D5427494DAA56F2F98BE1 /* NoteDatabase.swift in Sources */,
+				1F4416FFB9E3E5C83030FAB1 /* NoteDisplayView.swift in Sources */,
+				9A4733710F01A11F68A72836 /* OnsetDetector.swift in Sources */,
+				6FD6AB90CA28DB203343EB1C /* PitchHistoryView.swift in Sources */,
+				3AAAC6E105C56D3949917E85 /* PitchSmoother.swift in Sources */,
+				8E76AC7412EB1E4AFA7BF372 /* PracticeView.swift in Sources */,
+				E9DB8B3063C3F1E2C5481F73 /* PracticeViewModel.swift in Sources */,
+				81AC38AA2CE7393F7AA7EF6F /* Progression.swift in Sources */,
+				AF65207F8A93519DDF59B6E5 /* ProgressionsView.swift in Sources */,
+				05B408A7E395BA04BB2A1D1B /* SignalPreprocessor.swift in Sources */,
+				51121B94597944186CC8BFCA /* SplashScreen.swift in Sources */,
+				EFFEDFF568177D9F7FF62CBD /* StringIndicatorView.swift in Sources */,
+				048A2ADDA4F22174E9598916 /* Theme.swift in Sources */,
+				8DC03972A41A4BFAFEE1A02A /* TonePlayer.swift in Sources */,
+				CC5AEC8AC73DBFBF85049FC2 /* TunerView.swift in Sources */,
+				96C32E2D15D5B92FE11CE2ED /* TunerViewModel.swift in Sources */,
+				C5B355340F63DEE0B6328CDE /* TuningDefinition.swift in Sources */,
+				53EC8ABFEB69922277BC54FC /* TuningEngine.swift in Sources */,
+				B509BB047329929AAABC90C2 /* TuningPickerView.swift in Sources */,
+				957F7C7F8AC69DCA201CF80C /* YINPitchDetector.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		740C3497825CE1FB904855B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = 324R93TVL2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Guitaner needs microphone access to detect the pitch of your instrument strings.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guitaner.app;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		876F7BE2961C1927AF4EEFE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = 324R93TVL2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Guitaner needs microphone access to detect the pitch of your instrument strings.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guitaner.app;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DC82AB9F9FD21765892D314B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DF805B2BF6EE8D11B14FC8EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		136D881A97D6F9A89115FCE5 /* Build configuration list for PBXProject "Guitaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF805B2BF6EE8D11B14FC8EE /* Debug */,
+				DC82AB9F9FD21765892D314B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		142CECBB206803190F2EBED6 /* Build configuration list for PBXNativeTarget "Guitaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				740C3497825CE1FB904855B6 /* Debug */,
+				876F7BE2961C1927AF4EEFE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6861F0D6600478D4738FD0D /* Project object */;
+}
