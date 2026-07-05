@@ -33,6 +33,7 @@ final class ProgressionStore {
 }
 
 struct ProgressionsView: View {
+    @EnvironmentObject private var instrumentStore: InstrumentStore
     @State private var store = ProgressionStore()
     @State private var player = ChordPlayer()
     @State private var selectedKey: Int = 0            // 0 = C
@@ -61,6 +62,13 @@ struct ProgressionsView: View {
             VStack(spacing: 0) {
                 header
 
+                HStack {
+                    InstrumentPickerView()
+                    Spacer()
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 10)
+
                 keyPicker
                     .padding(.top, 10)
 
@@ -81,6 +89,10 @@ struct ProgressionsView: View {
                 selectedProgression = visibleProgressions.first
             }
             player.onFinished = { isPlaying = false }
+            player.setInstrument(instrumentStore.selected)
+        }
+        .onChange(of: instrumentStore.selected) { _, newValue in
+            player.setInstrument(newValue)
         }
         .onDisappear {
             player.stop()

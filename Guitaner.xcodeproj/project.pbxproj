@@ -31,12 +31,14 @@
 		53EC8ABFEB69922277BC54FC /* TuningEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2DC2F27D999DDF44C3CEC2 /* TuningEngine.swift */; };
 		6D2821C2B87DD6D1E8424093 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740FF5CDD779D58A4F7031D /* FeatureFlags.swift */; };
 		6FD6AB90CA28DB203343EB1C /* PitchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E52BE092A33A115B74DD2 /* PitchHistoryView.swift */; };
+		7BE2343008BB24884B27E8D6 /* InstrumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB98896F2BB1E0F1C707BF /* InstrumentPickerView.swift */; };
 		81AC38AA2CE7393F7AA7EF6F /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D1D539A017EEF9F34F445A /* Progression.swift */; };
 		8AD6AD0E336442F901C05658 /* ChordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB258206E69D01470135B7C /* ChordView.swift */; };
 		8DC03972A41A4BFAFEE1A02A /* TonePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2565E90CC0B987C7F724318 /* TonePlayer.swift */; };
 		8E76AC7412EB1E4AFA7BF372 /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA81666E6A5C55C98F70D36 /* PracticeView.swift */; };
 		957F7C7F8AC69DCA201CF80C /* YINPitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC0A6A69F7A4BD92DFEEDAB /* YINPitchDetector.swift */; };
 		96C32E2D15D5B92FE11CE2ED /* TunerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CB751AD456631C43EF3A38 /* TunerViewModel.swift */; };
+		98DA8FA7F0226D22200E5EF2 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257752C21029FBFD6A045AC /* Instrument.swift */; };
 		9A4733710F01A11F68A72836 /* OnsetDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579B94C7DD22B81B69A719F /* OnsetDetector.swift */; };
 		AF65207F8A93519DDF59B6E5 /* ProgressionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841B8650A750CDCC6E00B85 /* ProgressionsView.swift */; };
 		B509BB047329929AAABC90C2 /* TuningPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79ADDDCA6AEAEA532F0664 /* TuningPickerView.swift */; };
@@ -61,6 +63,7 @@
 		21CB751AD456631C43EF3A38 /* TunerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewModel.swift; sourceTree = "<group>"; };
 		27EC25AA41862A9E8EB5DC81 /* GuitanerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitanerApp.swift; sourceTree = "<group>"; };
 		2802A9B434A411ED1E33162B /* ChromagramAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromagramAnalyzer.swift; sourceTree = "<group>"; };
+		3257752C21029FBFD6A045AC /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		3B79ADDDCA6AEAEA532F0664 /* TuningPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningPickerView.swift; sourceTree = "<group>"; };
 		4CB258206E69D01470135B7C /* ChordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordView.swift; sourceTree = "<group>"; };
 		5272A480B813EF4DFFBD8C28 /* NoteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDatabase.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		5ECBDD68A28BB11DE43B6773 /* MetronomeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeEngine.swift; sourceTree = "<group>"; };
 		61AC930B81624FB3E982A3B0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		63872B2AEB087B36B685288A /* NoteDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDisplayView.swift; sourceTree = "<group>"; };
+		63AB98896F2BB1E0F1C707BF /* InstrumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentPickerView.swift; sourceTree = "<group>"; };
 		64573A6EF36A78F35778BC97 /* ChordLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordLibraryView.swift; sourceTree = "<group>"; };
 		6579B94C7DD22B81B69A719F /* OnsetDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnsetDetector.swift; sourceTree = "<group>"; };
 		668B8CF3B4BADE7CF20EA25F /* ChordDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordDatabase.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				E37995A31E2BA9883D4DF307 /* AudioEngine.swift */,
 				6B19924DAAAE54F1811A0CE5 /* AudioSessionManager.swift */,
 				F734EE81B323043CEEBD1888 /* ChordPlayer.swift */,
+				3257752C21029FBFD6A045AC /* Instrument.swift */,
 				5ECBDD68A28BB11DE43B6773 /* MetronomeEngine.swift */,
 				A2565E90CC0B987C7F724318 /* TonePlayer.swift */,
 			);
@@ -129,6 +134,7 @@
 				4CB258206E69D01470135B7C /* ChordView.swift */,
 				E09DB638C5E72E37E2783F8F /* FrequencyDisplayView.swift */,
 				9B62E8CCA0A2FB3E2C33D0DF /* FretboardView.swift */,
+				63AB98896F2BB1E0F1C707BF /* InstrumentPickerView.swift */,
 				63872B2AEB087B36B685288A /* NoteDisplayView.swift */,
 				C16E52BE092A33A115B74DD2 /* PitchHistoryView.swift */,
 				0CA81666E6A5C55C98F70D36 /* PracticeView.swift */,
@@ -319,6 +325,8 @@
 				DEBDAC82B64EDE380465F1C7 /* FretboardView.swift in Sources */,
 				3105F08A6BD15436D8205C60 /* GuitanerApp.swift in Sources */,
 				4FCACC3EC2378AA12971866C /* GuitanerIcon.swift in Sources */,
+				98DA8FA7F0226D22200E5EF2 /* Instrument.swift in Sources */,
+				7BE2343008BB24884B27E8D6 /* InstrumentPickerView.swift in Sources */,
 				0B249F1EB0F5B788CE401D8A /* MetronomeEngine.swift in Sources */,
 				251D5427494DAA56F2F98BE1 /* NoteDatabase.swift in Sources */,
 				1F4416FFB9E3E5C83030FAB1 /* NoteDisplayView.swift in Sources */,

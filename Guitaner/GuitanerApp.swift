@@ -3,11 +3,13 @@ import SwiftUI
 @main
 struct GuitanerApp: App {
     @StateObject private var proStore = ProStore()
+    @StateObject private var instrumentStore = InstrumentStore()
 
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(proStore)
+                .environmentObject(instrumentStore)
         }
     }
 }

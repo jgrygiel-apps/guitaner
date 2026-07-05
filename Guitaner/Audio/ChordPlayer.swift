@@ -12,9 +12,9 @@ final class ChordPlayer {
     private let sampler = AVAudioUnitSampler()
     private var engineStarted = false
 
-    // General MIDI program 25 = Acoustic Guitar (steel). Melodic bank = 0x79.
-    private let gmProgram: UInt8 = 25
-    private let melodicBankMSB: UInt8 = 0x79
+    // Currently loaded General MIDI program (default: Acoustic Guitar steel = 25).
+    private var gmProgram: UInt8 = Instrument.steelGuitar.program
+    private let melodicBankMSB: UInt8 = 0x79   // GM melodic bank
     private let bankLSB: UInt8 = 0x00
 
     private let queue = DispatchQueue(label: "com.guitaner.chordplayer")
@@ -32,6 +32,14 @@ final class ChordPlayer {
     }
 
     // MARK: - Sound bank
+
+    /// Switch the preview instrument. Reloads the matching SoundFont preset.
+    func setInstrument(_ instrument: Instrument) {
+        guard instrument.program != gmProgram else { return }
+        gmProgram = instrument.program
+        queue.async { [weak self] in self?.releaseAll() }
+        loadSoundFont()
+    }
 
     private func loadSoundFont() {
         guard let url = Bundle.main.url(forResource: "GeneralUser-GS", withExtension: "sf2") else {

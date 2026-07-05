@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ChordLibraryView: View {
     @EnvironmentObject private var store: ProStore
+    @EnvironmentObject private var instrumentStore: InstrumentStore
     @State private var selectedRoot: Int = 0        // 0=C, 1=C#, ..., 11=B
     @State private var selectedQualityIndex: Int = 0
     @State private var player = ChordPlayer()
@@ -39,6 +40,14 @@ struct ChordLibraryView: View {
             AppBackground()
 
             VStack(spacing: 0) {
+                // Instrument selector
+                HStack {
+                    Spacer()
+                    InstrumentPickerView()
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+
                 // Root note picker
                 rootPicker
                     .padding(.top, 12)
@@ -73,6 +82,12 @@ struct ChordLibraryView: View {
                     .padding(.top, 8)
                 }
             }
+        }
+        .onAppear {
+            player.setInstrument(instrumentStore.selected)
+        }
+        .onChange(of: instrumentStore.selected) { _, newValue in
+            player.setInstrument(newValue)
         }
         .onDisappear {
             player.stop()
