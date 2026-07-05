@@ -30,10 +30,12 @@ private struct RootView: View {
         }
         #if DEBUG
         // Floating Pro/Free switch for testing. DEBUG-only — never ships.
-        .overlay(alignment: .top) {
+        // Pinned to the top-trailing safe area so it clears the status bar / island.
+        .overlay(alignment: .topTrailing) {
             if !showSplash {
                 DebugProToggle()
-                    .padding(.top, 4)
+                    .padding(.trailing, 14)
+                    .padding(.top, 8)
                     .zIndex(2)
             }
         }

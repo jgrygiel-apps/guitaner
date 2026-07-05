@@ -1,63 +1,92 @@
 import AVFoundation
 
-/// Plays a sequence of chords (each a set of frequencies) with a light strum and
-/// a plucked decay envelope, so a progression can be previewed by ear.
+/// Plays a sequence of chords (each a set of frequencies) using a sampled
+/// instrument (steel-string acoustic guitar) so progressions and chord voicings
+/// can be previewed with a natural, realistic tone.
+///
+/// Backed by `AVAudioUnitSampler` loading the bundled GeneralUser GS SoundFont.
+/// The public API (`play`, `stop`, `isPlaying`, `onFinished`) is unchanged from
+/// the previous sine-wave implementation, so callers need no changes.
 final class ChordPlayer {
     private let engine = AVAudioEngine()
-    private var sourceNode: AVAudioSourceNode?
-    private var sampleRate: Float = 44100
+    private let sampler = AVAudioUnitSampler()
     private var engineStarted = false
 
-    private struct Voice {
-        var frequency: Float = 0
-        var phase: Float = 0
-        var level: Float = 0
-        var target: Float = 0
-        var attackStep: Float = 0
-        var decay: Float = 0.9999
-        var delay: Int = 0        // strum delay (samples) before the note sounds
-    }
-
-    private let voiceCount = 6
-    private var voices: [Voice]
-    private let lock = NSLock()
+    // General MIDI program 25 = Acoustic Guitar (steel). Melodic bank = 0x79.
+    private let gmProgram: UInt8 = 25
+    private let melodicBankMSB: UInt8 = 0x79
+    private let bankLSB: UInt8 = 0x00
 
     private let queue = DispatchQueue(label: "com.guitaner.chordplayer")
     private var generation = 0
+    private var activeNotes: Set<UInt8> = []      // only touched on `queue`
     private(set) var isPlaying = false
 
     /// Called on the main thread when the sequence finishes (or is stopped).
     var onFinished: (() -> Void)?
 
     init() {
-        voices = [Voice](repeating: Voice(), count: voiceCount)
+        engine.attach(sampler)
+        engine.connect(sampler, to: engine.mainMixerNode, format: nil)
+        loadSoundFont()
+    }
+
+    // MARK: - Sound bank
+
+    private func loadSoundFont() {
+        guard let url = Bundle.main.url(forResource: "GeneralUser-GS", withExtension: "sf2") else {
+            assertionFailure("GeneralUser-GS.sf2 missing from bundle")
+            return
+        }
+        do {
+            try sampler.loadSoundBankInstrument(at: url,
+                                                program: gmProgram,
+                                                bankMSB: melodicBankMSB,
+                                                bankLSB: bankLSB)
+        } catch {
+            // Falls back to the sampler's built-in default tone if loading fails.
+            print("ChordPlayer: failed to load SoundFont — \(error)")
+        }
     }
 
     // MARK: - Playback
 
-    func play(chords: [[Float]], stepDuration: Double = 0.85) {
+    /// Plays each chord in sequence. `stepDuration` is the time between chords.
+    func play(chords: [[Float]], stepDuration: Double = 2.0) {
         guard !chords.isEmpty else { return }
         startEngineIfNeeded()
-
-        lock.lock()
-        voices = [Voice](repeating: Voice(), count: voiceCount)
-        lock.unlock()
 
         generation += 1
         let gen = generation
         isPlaying = true
 
+        let strum = 0.3      // seconds between successive strings of a chord
+
         for (i, chord) in chords.enumerated() {
-            queue.asyncAfter(deadline: .now() + Double(i) * stepDuration) { [weak self] in
+            let stepStart = Double(i) * stepDuration
+            let notes = chord.map(midiNote(for:))
+
+            // Release the previous chord right before the new one strums in.
+            queue.asyncAfter(deadline: .now() + stepStart) { [weak self] in
                 guard let self, self.generation == gen else { return }
-                self.trigger(chord)
+                self.releaseAll()
+            }
+
+            // Strum the strings low-to-high.
+            for (j, note) in notes.enumerated() {
+                queue.asyncAfter(deadline: .now() + stepStart + Double(j) * strum) { [weak self] in
+                    guard let self, self.generation == gen else { return }
+                    self.sampler.startNote(note, withVelocity: 92, onChannel: 0)
+                    self.activeNotes.insert(note)
+                }
             }
         }
 
-        let tail = Double(chords.count) * stepDuration + 0.7
+        // Let the final chord ring, then release and report completion.
+        let tail = Double(chords.count) * stepDuration + 1.2
         queue.asyncAfter(deadline: .now() + tail) { [weak self] in
             guard let self, self.generation == gen else { return }
-            self.silence()
+            self.releaseAll()
             DispatchQueue.main.async {
                 self.isPlaying = false
                 self.onFinished?()
@@ -69,45 +98,26 @@ final class ChordPlayer {
         generation += 1
         let wasPlaying = isPlaying
         isPlaying = false
-        silence()
+        queue.async { [weak self] in self?.releaseAll() }
         if wasPlaying {
             DispatchQueue.main.async { [weak self] in self?.onFinished?() }
         }
     }
 
-    // MARK: - Voice control
+    // MARK: - Note helpers
 
-    private func silence() {
-        lock.lock()
-        for i in voices.indices {
-            voices[i].target = 0
-            voices[i].delay = 0
-        }
-        lock.unlock()
+    /// Nearest equal-tempered MIDI note for a frequency (A4 = 440 Hz = note 69).
+    private func midiNote(for frequency: Float) -> UInt8 {
+        guard frequency > 0 else { return 69 }
+        let n = 69.0 + 12.0 * log2(Double(frequency) / 440.0)
+        return UInt8(max(0, min(127, Int(n.rounded()))))
     }
 
-    private func trigger(_ frequencies: [Float]) {
-        let strumSamples = Int(0.022 * sampleRate)
-        let attackSamples = max(1, 0.006 * sampleRate)
-        let voiceTarget: Float = 0.11
-        let decayPerSample = powf(0.0008, 1.0 / (1.6 * sampleRate))  // ~1.6 s to near-silence
-
-        lock.lock()
-        for i in voices.indices {
-            if i < frequencies.count {
-                voices[i].frequency = frequencies[i]
-                voices[i].phase = 0
-                voices[i].level = 0
-                voices[i].target = voiceTarget
-                voices[i].attackStep = voiceTarget / attackSamples
-                voices[i].decay = decayPerSample
-                voices[i].delay = i * strumSamples
-            } else {
-                voices[i].target = 0    // let any leftover voice decay out
-                voices[i].delay = 0
-            }
+    private func releaseAll() {
+        for note in activeNotes {
+            sampler.stopNote(note, onChannel: 0)
         }
-        lock.unlock()
+        activeNotes.removeAll()
     }
 
     // MARK: - Engine
@@ -120,53 +130,6 @@ final class ChordPlayer {
             try AudioSessionManager.shared.activate()
         } catch {}
 
-        let format = engine.outputNode.outputFormat(forBus: 0)
-        sampleRate = Float(format.sampleRate)
-
-        let node = AVAudioSourceNode { [weak self] _, _, frameCount, ablList -> OSStatus in
-            guard let self else { return noErr }
-            let abl = UnsafeMutableAudioBufferListPointer(ablList)
-            let frames = Int(frameCount)
-            let twoPi = 2.0 * Float.pi
-
-            self.lock.lock()
-            for frame in 0..<frames {
-                var sample: Float = 0
-                for v in 0..<self.voiceCount {
-                    if self.voices[v].delay > 0 {
-                        self.voices[v].delay -= 1
-                        continue
-                    }
-                    // Envelope: linear attack to target, then exponential decay.
-                    if self.voices[v].level < self.voices[v].target {
-                        self.voices[v].level += self.voices[v].attackStep
-                        if self.voices[v].level > self.voices[v].target {
-                            self.voices[v].level = self.voices[v].target
-                        }
-                    } else {
-                        self.voices[v].level *= self.voices[v].decay
-                    }
-
-                    let lvl = self.voices[v].level
-                    let freq = self.voices[v].frequency
-                    if lvl > 0.0001 && freq > 0 {
-                        sample += lvl * sinf(self.voices[v].phase)
-                        self.voices[v].phase += twoPi * freq / self.sampleRate
-                        if self.voices[v].phase >= twoPi { self.voices[v].phase -= twoPi }
-                    }
-                }
-                for buffer in abl {
-                    let buf = UnsafeMutableBufferPointer<Float>(buffer)
-                    buf[frame] = sample
-                }
-            }
-            self.lock.unlock()
-            return noErr
-        }
-
-        sourceNode = node
-        engine.attach(node)
-        engine.connect(node, to: engine.mainMixerNode, format: format)
         engine.prepare()
         do {
             try engine.start()
