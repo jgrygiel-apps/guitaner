@@ -43,6 +43,7 @@
 		C5B355340F63DEE0B6328CDE /* TuningDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4B31AD90EDFE8D256F876 /* TuningDefinition.swift */; };
 		CA7625C4AC9806A7C713125A /* ChordDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B8CF3B4BADE7CF20EA25F /* ChordDatabase.swift */; };
 		CC5AEC8AC73DBFBF85049FC2 /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E96460689E2A41E5EE37C /* TunerView.swift */; };
+		DA8DB1DE493D860219216955 /* DebugProToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29BC0CA4C981BCE608DCA /* DebugProToggle.swift */; };
 		DEBDAC82B64EDE380465F1C7 /* FretboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B62E8CCA0A2FB3E2C33D0DF /* FretboardView.swift */; };
 		E9DB8B3063C3F1E2C5481F73 /* PracticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7911304646CCD4CD97D749C /* PracticeViewModel.swift */; };
 		EFFEDFF568177D9F7FF62CBD /* StringIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9ED8A144F74AB96101E7F9 /* StringIndicatorView.swift */; };
@@ -81,6 +82,7 @@
 		BA11315B6E1A438AA03348F8 /* ChordFingering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordFingering.swift; sourceTree = "<group>"; };
 		BC2DC2F27D999DDF44C3CEC2 /* TuningEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningEngine.swift; sourceTree = "<group>"; };
 		BE2833CF4484FC2B1D71621D /* PitchSmoother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchSmoother.swift; sourceTree = "<group>"; };
+		BFC29BC0CA4C981BCE608DCA /* DebugProToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugProToggle.swift; sourceTree = "<group>"; };
 		C16E52BE092A33A115B74DD2 /* PitchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchHistoryView.swift; sourceTree = "<group>"; };
 		D7D1D539A017EEF9F34F445A /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
 		D841B8650A750CDCC6E00B85 /* ProgressionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionsView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		B53CCBF13ADB9B5DFA322086 /* Monetization */ = {
 			isa = PBXGroup;
 			children = (
+				BFC29BC0CA4C981BCE608DCA /* DebugProToggle.swift */,
 				DA8EE8EE5BE9BF99824E2ED9 /* PaywallView.swift */,
 				95D2F7585A52D37A9845F583 /* ProFeature.swift */,
 				F9C16BC6A454D472B9165443 /* ProStore.swift */,
@@ -294,6 +297,7 @@
 				30D419CC96BF41C991C1BFA2 /* ChordViewModel.swift in Sources */,
 				28F0C781AC3731DA2CA31570 /* ChromagramAnalyzer.swift in Sources */,
 				4096EF055480873CA42EF9DB /* Constants.swift in Sources */,
+				DA8DB1DE493D860219216955 /* DebugProToggle.swift in Sources */,
 				6D2821C2B87DD6D1E8424093 /* FeatureFlags.swift in Sources */,
 				4A8CA4CF810496A542C38973 /* FrequencyDisplayView.swift in Sources */,
 				DEBDAC82B64EDE380465F1C7 /* FretboardView.swift in Sources */,

@@ -28,6 +28,16 @@ private struct RootView: View {
                 .zIndex(1)
             }
         }
+        #if DEBUG
+        // Floating Pro/Free switch for testing. DEBUG-only — never ships.
+        .overlay(alignment: .top) {
+            if !showSplash {
+                DebugProToggle()
+                    .padding(.top, 4)
+                    .zIndex(2)
+            }
+        }
+        #endif
     }
 
     private var mainTabs: some View {
