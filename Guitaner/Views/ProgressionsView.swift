@@ -116,6 +116,7 @@ struct ProgressionsView: View {
                 .background(Color.appAccent)
                 .clipShape(Capsule())
             }
+            .proGate(.customProgressions)
         }
         .padding(.horizontal, 20)
         .padding(.top, 12)

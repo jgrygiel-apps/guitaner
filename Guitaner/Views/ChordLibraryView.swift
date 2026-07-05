@@ -1,12 +1,21 @@
 import SwiftUI
 
 struct ChordLibraryView: View {
+    @EnvironmentObject private var store: ProStore
     @State private var selectedRoot: Int = 0        // 0=C, 1=C#, ..., 11=B
     @State private var selectedQualityIndex: Int = 0
     @State private var player = ChordPlayer()
+    @State private var showPaywall = false
 
     private let roots = ChordFingeringDatabase.rootNames
     private let qualities = ChordFingeringDatabase.qualities
+
+    /// The first few qualities (Major, Minor, 7) are free; the rest require Pro.
+    private let freeQualityCount = 3
+
+    private func isLocked(qualityIndex index: Int) -> Bool {
+        !store.hasAccess(to: .chordLibrary) && index >= freeQualityCount
+    }
 
     private let gridColumns = [
         GridItem(.flexible(), spacing: 16),
@@ -68,6 +77,9 @@ struct ChordLibraryView: View {
         .onDisappear {
             player.stop()
         }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView().environmentObject(store)
+        }
     }
 
     private func playChord(_ fingering: ChordFingering) {
@@ -104,15 +116,25 @@ struct ChordLibraryView: View {
             HStack(spacing: 6) {
                 ForEach(Array(qualities.enumerated()), id: \.offset) { index, quality in
                     Button {
-                        selectedQualityIndex = index
+                        if isLocked(qualityIndex: index) {
+                            showPaywall = true
+                        } else {
+                            selectedQualityIndex = index
+                        }
                     } label: {
-                        Text(quality.name)
-                            .font(.system(size: 13, weight: selectedQualityIndex == index ? .semibold : .regular))
-                            .foregroundColor(selectedQualityIndex == index ? .white : .gray)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 7)
-                            .background(selectedQualityIndex == index ? Color.appAccent.opacity(0.8) : Color.white.opacity(0.06))
-                            .clipShape(Capsule())
+                        HStack(spacing: 4) {
+                            Text(quality.name)
+                            if isLocked(qualityIndex: index) {
+                                Image(systemName: "lock.fill")
+                                    .font(.system(size: 9))
+                            }
+                        }
+                        .font(.system(size: 13, weight: selectedQualityIndex == index ? .semibold : .regular))
+                        .foregroundColor(selectedQualityIndex == index ? .white : .gray)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 7)
+                        .background(selectedQualityIndex == index ? Color.appAccent.opacity(0.8) : Color.white.opacity(0.06))
+                        .clipShape(Capsule())
                     }
                 }
             }

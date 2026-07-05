@@ -17,9 +17,11 @@
 		28F0C781AC3731DA2CA31570 /* ChromagramAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802A9B434A411ED1E33162B /* ChromagramAnalyzer.swift */; };
 		30D419CC96BF41C991C1BFA2 /* ChordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D90CB1D36811FDCB9E1BE /* ChordViewModel.swift */; };
 		3105F08A6BD15436D8205C60 /* GuitanerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EC25AA41862A9E8EB5DC81 /* GuitanerApp.swift */; };
+		356D025F80377D947D3DDCBB /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EE8EE5BE9BF99824E2ED9 /* PaywallView.swift */; };
 		3AAAC6E105C56D3949917E85 /* PitchSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2833CF4484FC2B1D71621D /* PitchSmoother.swift */; };
 		4096EF055480873CA42EF9DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AC930B81624FB3E982A3B0 /* Constants.swift */; };
 		4A8CA4CF810496A542C38973 /* FrequencyDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DB638C5E72E37E2783F8F /* FrequencyDisplayView.swift */; };
+		4C99D60DD34503BE67ACAF0B /* ProStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C16BC6A454D472B9165443 /* ProStore.swift */; };
 		4CF69B3D27152A6B0B034152 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37995A31E2BA9883D4DF307 /* AudioEngine.swift */; };
 		4F5649D72AC1D522B4EAD3A1 /* ChordPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734EE81B323043CEEBD1888 /* ChordPlayer.swift */; };
 		4FCACC3EC2378AA12971866C /* GuitanerIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B488C098FD21B44AC34F11F /* GuitanerIcon.swift */; };
@@ -37,6 +39,7 @@
 		AF65207F8A93519DDF59B6E5 /* ProgressionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841B8650A750CDCC6E00B85 /* ProgressionsView.swift */; };
 		B509BB047329929AAABC90C2 /* TuningPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79ADDDCA6AEAEA532F0664 /* TuningPickerView.swift */; };
 		BA4FB9C7A581DEF80352FEFC /* ChordLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64573A6EF36A78F35778BC97 /* ChordLibraryView.swift */; };
+		C202B79470C6687926BD9846 /* ProFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D2F7585A52D37A9845F583 /* ProFeature.swift */; };
 		C5B355340F63DEE0B6328CDE /* TuningDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4B31AD90EDFE8D256F876 /* TuningDefinition.swift */; };
 		CA7625C4AC9806A7C713125A /* ChordDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668B8CF3B4BADE7CF20EA25F /* ChordDatabase.swift */; };
 		CC5AEC8AC73DBFBF85049FC2 /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E96460689E2A41E5EE37C /* TunerView.swift */; };
@@ -70,6 +73,7 @@
 		6B9ED8A144F74AB96101E7F9 /* StringIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIndicatorView.swift; sourceTree = "<group>"; };
 		747D90CB1D36811FDCB9E1BE /* ChordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordViewModel.swift; sourceTree = "<group>"; };
 		95B68299618FFFB740D28B80 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		95D2F7585A52D37A9845F583 /* ProFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeature.swift; sourceTree = "<group>"; };
 		9B62E8CCA0A2FB3E2C33D0DF /* FretboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretboardView.swift; sourceTree = "<group>"; };
 		A2565E90CC0B987C7F724318 /* TonePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonePlayer.swift; sourceTree = "<group>"; };
 		B51E96460689E2A41E5EE37C /* TunerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
@@ -80,11 +84,13 @@
 		C16E52BE092A33A115B74DD2 /* PitchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchHistoryView.swift; sourceTree = "<group>"; };
 		D7D1D539A017EEF9F34F445A /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
 		D841B8650A750CDCC6E00B85 /* ProgressionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionsView.swift; sourceTree = "<group>"; };
+		DA8EE8EE5BE9BF99824E2ED9 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		E09DB638C5E72E37E2783F8F /* FrequencyDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyDisplayView.swift; sourceTree = "<group>"; };
 		E37995A31E2BA9883D4DF307 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		E740FF5CDD779D58A4F7031D /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		F734EE81B323043CEEBD1888 /* ChordPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPlayer.swift; sourceTree = "<group>"; };
 		F8446248B62F492007D48D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9C16BC6A454D472B9165443 /* ProStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -166,6 +172,16 @@
 			);
 			sourceTree = "<group>";
 		};
+		B53CCBF13ADB9B5DFA322086 /* Monetization */ = {
+			isa = PBXGroup;
+			children = (
+				DA8EE8EE5BE9BF99824E2ED9 /* PaywallView.swift */,
+				95D2F7585A52D37A9845F583 /* ProFeature.swift */,
+				F9C16BC6A454D472B9165443 /* ProStore.swift */,
+			);
+			path = Monetization;
+			sourceTree = "<group>";
+		};
 		B83801E4EB434297511045B9 /* Tuning */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +204,7 @@
 				09DC5542C13AF67CE030A315 /* SplashScreen.swift */,
 				1F65F7E849A51D304A2B1FF8 /* Audio */,
 				8D9F0C222313A4D109AFA51F /* DSP */,
+				B53CCBF13ADB9B5DFA322086 /* Monetization */,
 				B83801E4EB434297511045B9 /* Tuning */,
 				29E0B9F107EF9BDCA64D288D /* Utilities */,
 				4E071845102FEF81811B0C9A /* ViewModel */,
@@ -286,10 +303,13 @@
 				251D5427494DAA56F2F98BE1 /* NoteDatabase.swift in Sources */,
 				1F4416FFB9E3E5C83030FAB1 /* NoteDisplayView.swift in Sources */,
 				9A4733710F01A11F68A72836 /* OnsetDetector.swift in Sources */,
+				356D025F80377D947D3DDCBB /* PaywallView.swift in Sources */,
 				6FD6AB90CA28DB203343EB1C /* PitchHistoryView.swift in Sources */,
 				3AAAC6E105C56D3949917E85 /* PitchSmoother.swift in Sources */,
 				8E76AC7412EB1E4AFA7BF372 /* PracticeView.swift in Sources */,
 				E9DB8B3063C3F1E2C5481F73 /* PracticeViewModel.swift in Sources */,
+				C202B79470C6687926BD9846 /* ProFeature.swift in Sources */,
+				4C99D60DD34503BE67ACAF0B /* ProStore.swift in Sources */,
 				81AC38AA2CE7393F7AA7EF6F /* Progression.swift in Sources */,
 				AF65207F8A93519DDF59B6E5 /* ProgressionsView.swift in Sources */,
 				05B408A7E395BA04BB2A1D1B /* SignalPreprocessor.swift in Sources */,

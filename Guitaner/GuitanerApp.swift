@@ -2,9 +2,12 @@ import SwiftUI
 
 @main
 struct GuitanerApp: App {
+    @StateObject private var proStore = ProStore()
+
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environmentObject(proStore)
         }
     }
 }

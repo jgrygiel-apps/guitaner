@@ -2,12 +2,21 @@ import SwiftUI
 import QuartzCore
 
 struct PracticeView: View {
+    @EnvironmentObject private var store: ProStore
     @State private var viewModel = PracticeViewModel()
     @State private var showCalibration = false
 
     private let maxDevMs: Double = 80          // full-scale deviation for the visuals
 
     var body: some View {
+        if store.hasAccess(to: .practiceMode) {
+            practiceContent
+        } else {
+            ProLockedView(feature: .practiceMode)
+        }
+    }
+
+    private var practiceContent: some View {
         ZStack {
             AppBackground()
 
