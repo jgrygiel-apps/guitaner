@@ -25,6 +25,10 @@ final class ChordPlayer {
     /// Called on the main thread when the sequence finishes (or is stopped).
     var onFinished: (() -> Void)?
 
+    /// Called on the main thread with the index of the chord that just started
+    /// (or `nil` when playback ends), so the UI can highlight the current chord.
+    var onStepChanged: ((Int?) -> Void)?
+
     init() {
         engine.attach(sampler)
         engine.connect(sampler, to: engine.mainMixerNode, format: nil)
@@ -68,16 +72,21 @@ final class ChordPlayer {
         let gen = generation
         isPlaying = true
 
-        let strum = 0.3      // seconds between successive strings of a chord
+        let strum = 0.01     // seconds between successive strings of a chord
 
         for (i, chord) in chords.enumerated() {
             let stepStart = Double(i) * stepDuration
             let notes = chord.map(midiNote(for:))
 
-            // Release the previous chord right before the new one strums in.
+            // Release the previous chord right before the new one strums in, and
+            // tell the UI which chord is now sounding.
             queue.asyncAfter(deadline: .now() + stepStart) { [weak self] in
                 guard let self, self.generation == gen else { return }
                 self.releaseAll()
+                DispatchQueue.main.async {
+                    guard self.generation == gen else { return }
+                    self.onStepChanged?(i)
+                }
             }
 
             // Strum the strings low-to-high.
@@ -97,6 +106,7 @@ final class ChordPlayer {
             self.releaseAll()
             DispatchQueue.main.async {
                 self.isPlaying = false
+                self.onStepChanged?(nil)
                 self.onFinished?()
             }
         }
@@ -108,7 +118,10 @@ final class ChordPlayer {
         isPlaying = false
         queue.async { [weak self] in self?.releaseAll() }
         if wasPlaying {
-            DispatchQueue.main.async { [weak self] in self?.onFinished?() }
+            DispatchQueue.main.async { [weak self] in
+                self?.onStepChanged?(nil)
+                self?.onFinished?()
+            }
         }
     }
 

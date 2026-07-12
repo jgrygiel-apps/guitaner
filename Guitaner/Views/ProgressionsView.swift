@@ -41,6 +41,7 @@ struct ProgressionsView: View {
     @State private var selectedProgression: Progression?
     @State private var showBuilder = false
     @State private var isPlaying = false
+    @State private var playingStepIndex: Int?
 
     private let roots = ChordFingeringDatabase.rootNames
 
@@ -89,6 +90,7 @@ struct ProgressionsView: View {
                 selectedProgression = visibleProgressions.first
             }
             player.onFinished = { isPlaying = false }
+            player.onStepChanged = { playingStepIndex = $0 }
             player.setInstrument(instrumentStore.selected)
         }
         .onChange(of: instrumentStore.selected) { _, newValue in
@@ -221,23 +223,32 @@ struct ProgressionsView: View {
             }
             .padding(.horizontal, 20)
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(progression.steps) { step in
-                        chordCard(step)
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(Array(progression.steps.enumerated()), id: \.element.id) { index, step in
+                            chordCard(step, isActive: index == playingStepIndex)
+                                .id(index)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 8)
+                }
+                .onChange(of: playingStepIndex) { _, idx in
+                    guard let idx else { return }
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        proxy.scrollTo(idx, anchor: .center)
                     }
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 8)
             }
         }
     }
 
-    private func chordCard(_ step: ProgressionStep) -> some View {
+    private func chordCard(_ step: ProgressionStep, isActive: Bool) -> some View {
         VStack(spacing: 4) {
             Text(step.numeral)
                 .font(.system(size: 12, weight: .semibold))
-                .foregroundColor(.appAccent.opacity(0.8))
+                .foregroundColor(isActive ? .appAmber : .appAccent.opacity(0.8))
             Text(step.chordName(inKey: selectedKey))
                 .font(.system(size: 15, weight: .bold, design: .rounded))
                 .foregroundColor(.white)
@@ -253,8 +264,14 @@ struct ProgressionsView: View {
             }
         }
         .padding(10)
-        .background(Color.white.opacity(0.04))
+        .background(isActive ? Color.appAccent.opacity(0.20) : Color.white.opacity(0.04))
         .clipShape(RoundedRectangle(cornerRadius: 12))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(isActive ? Color.appAmber : Color.clear, lineWidth: 2)
+        )
+        .scaleEffect(isActive ? 1.04 : 1.0)
+        .animation(.easeInOut(duration: 0.2), value: isActive)
     }
 
     // MARK: - Progression List
