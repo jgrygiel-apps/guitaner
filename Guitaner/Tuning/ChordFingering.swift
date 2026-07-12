@@ -38,10 +38,20 @@ enum ChordFingeringDatabase {
         ("Sus2", "sus2"),
         ("Sus4", "sus4"),
         ("Dim", "dim"),
+        ("Dim 7", "dim7"),
+        ("Minor 7♭5", "m7b5"),
         ("Aug", "aug"),
-        ("Add9", "add9"),
         ("6", "6"),
+        ("Minor 6", "m6"),
+        ("Add9", "add9"),
         ("9", "9"),
+        ("Minor 9", "m9"),
+        ("Major 9", "maj9"),
+        ("11", "11"),
+        ("Minor 11", "m11"),
+        ("13", "13"),
+        ("7♭9", "7b9"),
+        ("7♯9", "7#9"),
     ]
 
     /// Get all fingering variants for a given root + quality.
@@ -214,6 +224,59 @@ enum ChordFingeringDatabase {
         "9": [
             BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
                           intervals: [0, 2, 0, 1, 0, 2], fingerPattern: [1, 3, 1, 2, 1, 4]),
+        ],
+        // Half-diminished (m7♭5): root, ♭3, ♭5, ♭7. E-shape on the low 4 strings,
+        // A-shape on strings A–B.
+        "m7b5": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, 1, 0, 0, -1, -1], fingerPattern: [1, 2, 1, 1, 0, 0]),
+            BarreTemplate(shapeName: "A", rootStringIndex: 1, openRootFret: 0,
+                          intervals: [-1, 0, 1, 0, 1, -1], fingerPattern: [0, 1, 2, 1, 3, 0]),
+        ],
+        // Diminished 7 (root, ♭3, ♭5, 𝄫7). Top-4-string voicing, root on D string.
+        "dim7": [
+            BarreTemplate(shapeName: "D", rootStringIndex: 2, openRootFret: 0,
+                          intervals: [-1, -1, 0, 1, 0, 1], fingerPattern: [0, 0, 1, 2, 1, 3]),
+        ],
+        // Minor 6 (root, ♭3, 5, 6) — E-shape.
+        "m6": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, 2, 2, 0, 2, 0], fingerPattern: [1, 3, 4, 1, 2, 1]),
+        ],
+        // Minor 9 (root, ♭3, 5, ♭7, 9) — E-shape.
+        "m9": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, 2, 0, 0, 0, 2], fingerPattern: [1, 3, 1, 1, 1, 4]),
+        ],
+        // Major 9 (root, 3, 5, maj7, 9) — E-shape.
+        "maj9": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, 2, 1, 1, 0, 2], fingerPattern: [1, 3, 2, 2, 1, 4]),
+        ],
+        // Dominant 11 (root, 9, 11, 5, ♭7 — 3rd omitted) — E-shape.
+        "11": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, 2, 0, 2, 0, 2], fingerPattern: [1, 2, 1, 3, 1, 4]),
+        ],
+        // Minor 11 (root, 9, ♭3, 11, 5, ♭7) — full barre with a 9 on top.
+        "m11": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, 0, 0, 0, 0, 2], fingerPattern: [1, 1, 1, 1, 1, 3]),
+        ],
+        // Dominant 13 (root, 3, ♭7, 13) — jazz shell voicing, root on low E.
+        "13": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, -1, 0, 1, 2, -1], fingerPattern: [1, 0, 1, 2, 3, 0]),
+        ],
+        // Dominant 7♭9 (root, ♭9, 3, 5, ♭7) — E-shape.
+        "7b9": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, -1, 0, 1, 0, 1], fingerPattern: [1, 0, 1, 2, 1, 3]),
+        ],
+        // Dominant 7♯9 ("Hendrix", root, 3, 5, ♭7, ♯9) — E-shape.
+        "7#9": [
+            BarreTemplate(shapeName: "E", rootStringIndex: 0, openRootFret: 0,
+                          intervals: [0, -1, 0, 1, 0, 3], fingerPattern: [1, 0, 1, 2, 1, 4]),
         ],
     ]
 

@@ -130,6 +130,11 @@ enum ProgressionLibrary {
             steps: [s(2, "m7", "ii7"), s(1, "7", "bII7"), s(0, "maj7", "Imaj7")]),
         Progression(name: "Backdoor (ii–bVII7–I)", category: "Jazz",
             steps: [s(2, "m7", "ii7"), s(10, "7", "bVII7"), s(0, "maj7", "Imaj7")]),
+        Progression(name: "Minor iiø–V7–i", category: "Jazz",
+            steps: [s(2, "m7b5", "iiø7"), s(7, "7", "V7"), s(0, "m", "i")]),
+        Progression(name: "Autumn Leaves (ii–V–I–IV–viiø–III–vi)", category: "Jazz",
+            steps: [s(2, "m7", "ii7"), s(7, "7", "V7"), s(0, "maj7", "Imaj7"), s(5, "maj7", "IVmaj7"),
+                    s(11, "m7b5", "viiø"), s(4, "7", "III7"), s(9, "m", "vi")]),
 
         // MARK: Minor
         Progression(name: "Minor Axis (i–VI–III–VII)", category: "Minor",
